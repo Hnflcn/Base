@@ -1,8 +1,6 @@
 using _Main.Scripts._Base.FeedBacks;
 using _Main.Scripts.Managers;
 using UnityEngine;
-using VP.Nest.UI;
-using VPNest.UI.Scripts;
 using Zenject;
 
 namespace _Main.Scripts._Base.ZenjectControl

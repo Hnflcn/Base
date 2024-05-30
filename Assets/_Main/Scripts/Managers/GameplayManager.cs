@@ -1,12 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
+
 using _Main.Scripts.GamePlay.Events;
-using _Main.Scripts.GamePlay.GridSystem;
-using _Main.Scripts.GamePlay.GridSystem.TileGeneral;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
-using VPNest.UI.Scripts;
 
 namespace _Main.Scripts.Managers
 {
@@ -30,19 +26,9 @@ namespace _Main.Scripts.Managers
 
         public async void Initialization()
         {
-            UIManager.Instance.InGameUI.TapToStart();
-            _gameplayReferences.targetUIController.Init();
-            _gameplayReferences.coinController.Initialization();
-            await _gameplayReferences.zoneController.Initialization();
+            _gameplayReferences.UIManager.Initialization();
             _gameplayReferences.tileSelectControl.Initialization();
-
-            await _gameplayReferences.targetUIController.TargetAnimate();
-            if (_gameplayReferences.ftueManager != null)
-            {
-                await UniTask.Delay(200);
-                _gameplayReferences.ftueManager.Init();
-            }
-            
+            await _gameplayReferences.gridController.Initialization();
             
             _gameplayReferences.gameState = GameState.OnGame;
         }
@@ -53,7 +39,7 @@ namespace _Main.Scripts.Managers
             _gameplayReferences.gameState = GameState.OnFinish;
             DOVirtual.DelayedCall(1f, () =>
             {
-                UIManager.Instance.SuccessGame();
+               
             });
         }
 
@@ -63,7 +49,7 @@ namespace _Main.Scripts.Managers
             _gameplayReferences.gameState = GameState.OnFinish;
             DOVirtual.DelayedCall(1f, () =>
             {
-                UIManager.Instance.FailGame();
+                
             });
         }
 

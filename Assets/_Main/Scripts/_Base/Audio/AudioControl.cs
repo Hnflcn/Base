@@ -1,5 +1,4 @@
 using UnityEngine;
-using VP.Nest.Haptic;
 
 namespace _Main.Scripts._Base.Audio
 {
@@ -28,7 +27,6 @@ namespace _Main.Scripts._Base.Audio
         
         private void AddHaptic()
         {
-            HapticManager.Haptic(HapticType.LightImpact);
         }
 
         private void EditVolume(float value)

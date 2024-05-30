@@ -1,4 +1,6 @@
+using _Main.Scripts.GamePlay.GridSystem.Control;
 using _Main.Scripts.GamePlay.InputSystem;
+using _Main.Scripts.SelectSystem;
 using UnityEngine;
 
 namespace _Main.Scripts.Managers
@@ -19,7 +21,10 @@ namespace _Main.Scripts.Managers
         public bool CanContinueGame { get; set; }
 
         public InputHandler InputHandler { get; set; }
-        public GameplayManager GameplayManager { get; set; }
+        public GameplayManager GameplayManager;
+        public UIManager UIManager;
+        public TileSelectControl tileSelectControl;
+        public GameplayGridController gridController;
 
     }
 }
