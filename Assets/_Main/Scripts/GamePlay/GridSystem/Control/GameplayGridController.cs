@@ -1,6 +1,5 @@
 using _Main.Scripts._Base.GridSystem;
-using _Main.Scripts._Base.GridSystem.SO;
-using _Main.Scripts._Base.Pool._Main.Scripts.Pool;
+using _Main.Scripts._Base.Pool;
 using _Main.Scripts.GamePlay.ZoneSystem;
 using _Main.Scripts.Managers;
 using _Main.Scripts.Pool;

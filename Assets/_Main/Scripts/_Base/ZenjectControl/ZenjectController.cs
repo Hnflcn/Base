@@ -1,15 +1,15 @@
+using _Main.Scripts._Base.Pool;
 using _Main.Scripts._Base.Pool.Types;
 using _Main.Scripts.Pool;
 using UnityEngine;
 using Zenject;
-using FloatingType = Pool.FloatingType;
 
 namespace _Main.Scripts._Base.ZenjectControl
 {
     public class ZenjectController : MonoInstaller
     {
-        [SerializeField] private ObjectPool<ObjeType> objectPool;
-        [SerializeField] private ObjectPool<ParticleType> particlePool;
+        [SerializeField] private AudioPool objectPool;
+        [SerializeField] private ParticlePool particlePool;
         [SerializeField] private ObjectPool<FloatingType> floatingPool;
         [SerializeField] private ObjectPool<BlockType> blockPool;
         [SerializeField] private ObjectPool<SoundType> audioPool;

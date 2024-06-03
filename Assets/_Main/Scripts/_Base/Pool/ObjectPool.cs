@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace _Main.Scripts.Pool
+namespace _Main.Scripts._Base.Pool
 {
 	public enum ObjeType
 	{
