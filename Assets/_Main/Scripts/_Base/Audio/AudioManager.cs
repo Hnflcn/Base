@@ -1,7 +1,5 @@
 using _Main.Scripts.Pool;
 using UnityEngine;
-using Zenject;
-using AudioType = _Main.Scripts.Pool.AudioType;
 
 namespace _Main.Scripts._Base.Audio
 {

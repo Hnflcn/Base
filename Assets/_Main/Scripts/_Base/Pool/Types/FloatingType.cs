@@ -5,7 +5,9 @@ namespace _Main.Scripts._Base.Pool.Types
         Locked,
         NoMove,
         NoMoney,
-        NoMatch
+        NoMatch,
+        Combo2,
+        Combo3
     }
 
 }

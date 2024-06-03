@@ -8,18 +8,16 @@ namespace _Main.Scripts._Base.ZenjectControl
 {
     public class ZenjectController : MonoInstaller
     {
-        [SerializeField] private AudioPool objectPool;
+        [SerializeField] private MyObjectPool objectPool;
         [SerializeField] private ParticlePool particlePool;
-        [SerializeField] private ObjectPool<FloatingType> floatingPool;
-        [SerializeField] private ObjectPool<BlockType> blockPool;
-        [SerializeField] private ObjectPool<SoundType> audioPool;
+        [SerializeField] private FloatingPool floatingPool;
+        [SerializeField] private AudioPool audioPool;
         public override void InstallBindings()
         {
             Container.BindInstance(objectPool).AsSingle();
             Container.BindInstance(particlePool).AsSingle();
             Container.BindInstance(floatingPool).AsSingle();
             Container.BindInstance(audioPool).AsSingle();
-            Container.BindInstance(blockPool).AsSingle();
         }
     }
 }

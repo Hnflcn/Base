@@ -1,5 +1,6 @@
 using _Main.Scripts._Base.GridSystem;
 using _Main.Scripts._Base.Pool;
+using _Main.Scripts._Base.Pool.Types;
 using _Main.Scripts.GamePlay.ZoneSystem;
 using _Main.Scripts.Managers;
 using _Main.Scripts.Pool;
@@ -15,8 +16,7 @@ namespace _Main.Scripts.GamePlay.GridSystem.Control
         [SerializeField] private GameObject parentGrids;
         [SerializeField] private GameObject parentZones;
 
-        [Inject] private ObjectPool<ObjeType> _objectPool;
-
+        [Inject] private BasePool<ObjeType, GameObject> _generalPool;
         public Tile[,] tileArray;
         protected override async UniTask Generating()
         {
@@ -31,7 +31,7 @@ namespace _Main.Scripts.GamePlay.GridSystem.Control
         {
             tileArray = new Tile[levelGridData.gridsTile.GridSize.x, levelGridData.gridsTile.GridSize.y];
             GridGenerator.GeneratePrefabInt<Tile, ObjeType>(parentGrids, levelGridData.gridsTile, ObjeType.Grid,
-                offsetGridX, offsetGridY, _objectPool, GeneratingGrid);
+                offsetGridX, offsetGridY, _generalPool, GeneratingGrid);
 
             return UniTask.CompletedTask;
         }
@@ -47,7 +47,7 @@ namespace _Main.Scripts.GamePlay.GridSystem.Control
         private UniTask GenerateZone()
         {
             GridGenerator.GeneratePrefabInt<Zone, ObjeType>(parentZones, levelGridData.gridsZone, ObjeType.Zone,
-                offsetGridZoneX, offsetGridZoneY, _objectPool, GeneratingZone);
+                offsetGridZoneX, offsetGridZoneY, _generalPool, GeneratingZone);
 
             return UniTask.CompletedTask;
         }
